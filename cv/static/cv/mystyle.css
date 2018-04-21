@@ -1,0 +1,155 @@
+/* * {box-sizing: border-box;} */
+h1 {
+  text-align: center;
+}
+.wrapper {
+  max-width: 100%;
+  margin-top: 10em;
+  /* position: relative; */
+  padding: 10%
+  /* margin: 0 auto; */
+}
+/* 
+.wrapper > div {
+  border: 2px solid rgb(233, 88, 233);
+  border-radius: 5px;
+  padding: 2em;
+  color: #d9480f;
+} */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  background-color: lime;
+}
+.taquin {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  background-color: navy;
+  padding: 2em;  
+}
+/* .taquin-output {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 2em;
+  background-color: mediumvioletred;
+} */
+.taquin > .title {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: red;
+  border: 2px solid rgb(25, 146, 136);  
+  outline: none;
+  text-align: center;
+} 
+.form-taquin {
+  grid-column: 1 / 2;
+  grid-row: 2 / 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 2em;
+  background-color: mediumvioletred;
+}
+.one {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em 1em 1em 1em;
+  text-align: center;
+  box-sizing: border-box;
+}
+.two {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em 1em 1em 1em;
+  text-align: center;
+  box-sizing: border-box;
+}
+.three { 
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em 1em 1em 1em;
+  text-align: center;
+  box-sizing: border-box;
+}
+/* #trois {
+  grid-column: 3 / 3;
+  grid-row: 2 / 3;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center  
+} */
+.four {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center  
+}
+.five {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center  
+}
+.six {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center  
+}
+.seven {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center  
+}
+.eight {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center  
+}
+.nine {
+  grid-column: 3 / 3;
+  grid-row: 3 / 4;
+  background-color: rebeccapurple;
+  border: 2px solid rgb(25, 146, 136);
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center  
+}
+input[type=text]:hover {
+  background-color: orange;
+  cursor: pointer;
+}
