@@ -9,6 +9,9 @@ new Vue({
         },
         changeColor: function(event) {
             event.target.style.backgroundColor = "orange"
+        },
+        revertColor: function(event) {
+            event.target.style.backgroundColor = "red"
         }
     }
 })

@@ -15,15 +15,15 @@
         <div class="taquin">
             <input type=text placeholder="Enter notes here?" class="title" id="title-input" />
             <form id="taquin-initial" action="taquin/voteq/" method="post" class="form-taquin">{% csrf_token %}
-                <input type="text" class="one" id="input-one" name="init-one" v-on:blur="changeTextSize" @focus="$event.target.select()">
-                <input type="text" class="two" name="init-two" v-on:blur="changeTextSize" v-on:mouseover="changeColor">
-                <input type="text" class="three" name="init-three" v-on:blur="changeTextSize">
-                <input type="text" class="four" name="init-four" v-on:blur="changeTextSize">
-                <input type="text" class="five" name="init-five" v-on:blur="changeTextSize">
-                <input type="text" class="six" name="init-six" v-on:blur="changeTextSize">
-                <input type="text" class="seven" name="init-seven" v-on:blur="changeTextSize">
-                <input type="text" class="eight" name="init-eight" v-on:blur="changeTextSize">
-                <input type="text" class="nine" name="init-nine" v-on:blur="changeTextSize">
+                <input type="text" class="one" id="input-one" name="init-one" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="two" name="init-two" @blur="changeTextSize" @mouseover="changeColor" @mouseout="revertColor" @focus="$event.target.select()">
+                <input type="text" class="three" name="init-three" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="four" name="init-four" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="five" name="init-five" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="six" name="init-six" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="seven" name="init-seven" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="eight" name="init-eight" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="nine" name="init-nine" @blur="changeTextSize" @focus="$event.target.select()">
             </form>
         </div>
 
