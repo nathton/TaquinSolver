@@ -3,7 +3,7 @@
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 {% if question.choice_set.all %}
-    <form action="{% url 'taquin:vote' question.id %}" method="post">
+    <form action="{% url 'cv:vote' question.id %}" method="post">
     {% csrf_token %}
     {% for choice in question.choice_set.all %}
         <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
@@ -12,4 +12,4 @@
     <input type="submit" value="Vote" />
     </form>
 {% endif %}
-<a href="{% url 'taquin:index' %}">Go back</a>
+<a href="{% url 'cv:index' %}">Go back</a>
