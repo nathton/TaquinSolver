@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
-{% load static %}
-<head>
-    <meta charset="utf-8">
-    <title>My Resume</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'taquin/mystyle.css' %}" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <script src="https://unpkg.com/vue"></script>
-</head>
-<body>
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <title>My Resume</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'taquin/style.css' %}" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div class="aside">ff</div>
+        <div class="main">
+            <div class="title-init">Initial Taquin</div>
+            <div class="title-target">Target Taquin</div>
+            <form name="taquins" class="taquins" action="compute/" method="post">{% csrf_token %}
+                <fieldset name="taquin-initial" class="taquin-init">
+                    <input type="text" class="taquin-elem" name="i-one" pattern="(X|[1-8])"/>
+                    <input type="text" class="taquin-elem" name="i-two" pattern="(X|[1-8])"/>
+                    <input type="text" class="taquin-elem" name="i-three" pattern="(X|[1-8])"/>
+                    <input type="text" class="taquin-elem" name="i-four" pattern="(X|[1-8])"/>
+                    <input type="text" class="taquin-elem" name="i-five" pattern="(X|[1-8])"/>
+                    <input type="text" class="taquin-elem" name="i-six" pattern="(X|[1-8])"/>
+                    <input type="text" class="taquin-elem" name="i-seven" pattern="(X|[1-8])"/>
+                    <input type="text" class="taquin-elem" name="i-eight" pattern="(X|[1-8])"/>
+                    <input type="text" class="taquin-elem" name="i-nine" pattern="(X|[1-8])"/>
+                </fieldset>
+                <input type="submit" name="reset" value="Reset" class="button-reset" action="/compute" method="post">
+                <fieldset name="taquin-final" class="taquin-target">
+                    <input type="text" class="taquin-elem" name="t-one" pattern="(X|[1-8])">
+                    <input type="text" class="taquin-elem" name="t-two" pattern="(X|[1-8])">
+                    <input type="text" class="taquin-elem" name="t-three" pattern="(X|[1-8])">
+                    <input type="text" class="taquin-elem" name="t-four" pattern="(X|[1-8])">
+                    <input type="text" class="taquin-elem" name="t-five" pattern="(X|[1-8])">
+                    <input type="text" class="taquin-elem" name="t-six" pattern="(X|[1-8])">
+                    <input type="text" class="taquin-elem" name="t-seven" pattern="(X|[1-8])">
+                    <input type="text" class="taquin-elem" name="t-eight" pattern="(X|[1-8])">
+                    <input type="text" class="taquin-elem" name="t-nine" pattern="(X|[1-8])">
+                </fieldset>
+                <input type="submit" name="submit" value="Submit" class="button-submit" action="/compute" method="post">             
+            </form>
+        </div>
+        <div class="header">Taquin Solver</div>
+        <script src="{% static 'taquin/myvue.js' %}"></script>        
+    </body>
+</html>
+
+
+
+
+
+<!-- <body>
     <h1>Taquin Solver</h1>
     <div class="wrapper">
-        <div class="taquin">
-            <input type=text placeholder="Enter notes here?" class="title" id="title-input" />
-            <form id="taquin-initial" action="taquin/compute/" method="post" class="form-taquin">{% csrf_token %}
+        <div class="taquin-headers" id="initial">Taquin initial</div>
+        <div class="taquin-headers" id="final">Taquin final</div>
+        <form id="taquin-solver" action="taquin/solve/" method="post" class="form-taquins">{% csrf_token %}
+            <div class="taquin-initial">
                 <input type="text" class="one" id="input-one" name="init-one" @blur="changeTextSize" @focus="$event.target.select()">
                 <input type="text" class="two" name="init-two" @blur="changeTextSize" @mouseover="changeColor" @mouseout="revertColor" @focus="$event.target.select()">
                 <input type="text" class="three" name="init-three" @blur="changeTextSize" @focus="$event.target.select()">
@@ -24,53 +66,24 @@
                 <input type="text" class="seven" name="init-seven" @blur="changeTextSize" @focus="$event.target.select()">
                 <input type="text" class="eight" name="init-eight" @blur="changeTextSize" @focus="$event.target.select()">
                 <input type="text" class="nine" name="init-nine" @blur="changeTextSize" @focus="$event.target.select()">
-                <div class="button">
-                    <button type="submit">Envoyer le message</button>
-                </div>
-            </form>
-        </div>      
-
-
-        <!-- <form id="taquin-initial" action="taquin/voteq/" method="post">
-            
-            <div class="taquin-input">
-                <div class="one" id="un"><button v-on:click="reverseMessage">Reverse Message</button><p>[[ message ]]</p></div>            
-                <input type="text" name="name" id="name">
-                <input type="text" name="trois" id="trois" class=trois>
-                <div class="four">Quatre</div>
-                <div class="five">Cinq</div>
-                <div class="six">Six</div>
-                <div class="sept">Sept</div>
-                <div class="huit">Huit</div>
-                <div class="neuf">Neuf</div>
             </div>
-
-        </form> -->
-        <!-- <div class="taquin-input">
-            <input v-model="title-input" placeholder="Enter notes here?" class="title" id="title-input" v-on:mouseover="changeCursor" onkeydown="changeInput(this)"/>
-            <div class="one" id="input-un"><button v-on:click="reverseMessage">Reverse Message</button><p>[[ message ]]</p></div>
-            <div class="two">Deux</div>
-            <div class="three">Trois</div>
-            <div class="four">Quatre</div>
-            <div class="five">Cinq</div>
-            <div class="six">Six</div>
-            <div class="sept">Sept</div>
-            <div class="huit">Huit</div>
-            <div class="neuf">Neuf</div>
-        </div>
-        <div class="taquin-output">
-            <div class="one">Un</div>
-            <div class="two">Deux</div>
-            <div class="three">Trois</div>
-            <div class="four">Quatre</div>
-            <div class="five">Cinq</div>
-            <div class="six">Six</div>
-            <div class="sept">Sept</div>
-            <div class="huit">Huit</div>
-            <div class="neuf">Neuf</div>
-        </div> -->
+            <div class="taquin-final">
+                <input type="text" class="one" id="output-one" name="init-one" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="two" name="output-two" @blur="changeTextSize" @mouseover="changeColor" @mouseout="revertColor" @focus="$event.target.select()">
+                <input type="text" class="three" name="output-three" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="four" name="output-four" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="five" name="output-five" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="six" name="output-six" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="seven" name="output-seven" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="eight" name="output-eight" @blur="changeTextSize" @focus="$event.target.select()">
+                <input type="text" class="nine" name="output-nine" @blur="changeTextSize" @focus="$event.target.select()">    
+            </div>
+            <div class="button">
+                <button type="submit">Envoyer le message</button>
+            </div>
+        </form>
     </div>
 </body>
 <script src="{% static 'taquin/myvue.js' %}"></script>
-</html>
+</html> -->
 

@@ -1,5 +1,5 @@
 new Vue({
-    el: 'form',
+    el: '.taquin-elem',
     methods: {
         changeTextSize: function(event) {
             if (event.target.value) {
@@ -7,14 +7,27 @@ new Vue({
                 event.target.style.backgroundColor = 'red';
             }
         },
-        changeColor: function(event) {
-            event.target.style.backgroundColor = "orange"
-        },
-        revertColor: function(event) {
-            event.target.style.backgroundColor = "red"
-        }
     }
 })
+
+
+// new Vue({
+//     el: 'form',
+//     methods: {
+//         changeTextSize: function(event) {
+//             if (event.target.value) {
+//                 event.target.style.textAlign = 'center';
+//                 event.target.style.backgroundColor = 'red';
+//             }
+//         },
+//         changeColor: function(event) {
+//             event.target.style.backgroundColor = "orange"
+//         },
+//         revertColor: function(event) {
+//             event.target.style.backgroundColor = "red"
+//         }
+//     }
+// })
 
 // function changeTextSize(ele) {
 //     ele.style.textAlign = 'center';
@@ -64,5 +77,3 @@ new Vue({
 //         ele.style.textAlign = 'center'
 //     }
 // }
-
-  

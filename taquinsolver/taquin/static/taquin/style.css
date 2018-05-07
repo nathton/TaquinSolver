@@ -1,0 +1,85 @@
+fieldset {
+    grid-area: taquin-init;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: normal;
+    justify-items: center;
+}
+
+input[type=text]:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
+.taquin-target {
+    grid-area: taquin-target;
+    background-color: beige;
+}
+
+.taquin-elem {
+    width: 90%;
+    height: 90%;
+    margin: 10%;
+}
+
+.title-init {
+    grid-area: title-init;
+    background-color: blueviolet;
+}
+
+.title-target {
+    grid-area: title-target;
+    background-color: brown;
+}
+
+.taquins {
+    grid-area: taquins;
+    background-color: blanchedalmond;
+    display: grid;
+    grid-template-rows: 1fr 5%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "taquin-init taquin-target"
+                         "button-reset button-submit";
+}
+
+.button-submit {
+    grid-area: button-submit;
+    background-color: azure;
+}
+
+.button-reset {
+    grid-area: button-reset;
+    background-color: yellow;
+}
+
+.main {
+    grid-area: main;
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5% 1fr;
+    grid-template-areas: "title-init title-target"
+                         "taquins taquins"
+}
+  
+.header {
+    grid-area: header;
+    background-color: blue;
+}
+
+.aside {
+    grid-area: sidebar;
+    background-color: red;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 90px 1fr;
+    min-height: 100vh;
+    min-width: 100%;
+    grid-template-areas: "sidebar  header"
+                         "sidebar  main";
+    background-color: black;
+}
